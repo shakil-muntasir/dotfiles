@@ -43,18 +43,28 @@ This repository contains my personal dotfiles, including configuration files for
 
 ### Setting Up Dotfiles
 
-3. Run the setup script to symlink dotfiles to your home directory:
+3. Run the setup script to install Oh My ZSH and symlink dotfiles to your home directory:
    ```bash
-   bash run.sh
+   bash init.sh
    ```
 
    This script will symlink dotfiles from `~/.dotfiles` to your home directory (`~/`). If a file with the same name exists in your home directory, it will be renamed with a timestamp and `.backup` extension.
+
+
+### Installing Oh My ZSH
+
+If you only want to install Oh My ZSH and it's plugins:
+```bash
+bash scripts/omz.sh
+```
+
+This will remove the symlinks and restore any backed-up files.
 
 ### Unlinking Dotfiles
 
 If you want to unlink the dotfiles and remove the symlinks, you can use the `--unlink` option with the setup script:
 ```bash
-bash run.sh --unlink
+bash scripts/symlinks.sh --unlink
 ```
 
 This will remove the symlinks and restore any backed-up files.
