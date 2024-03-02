@@ -14,7 +14,13 @@ create_symlink() {
     local source_file="$1"
     local target_file="$2"
     
-    # If the target file already exists, rename it with timestamp
+    # If the target file exists and is a symlink, skip creating a new symlink
+    if [ -L "$target_file" ]; then
+        echo -e "${YELLOW}Skipping: $target_file already symlinked.${NC}"
+        return
+    fi
+    
+    # If the target file already exists and is not a symlink, rename it with timestamp
     if [ -e "$target_file" ]; then
         timestamp=$(date +"%Y-%m-%d_%H:%M:%S")
         mv "$target_file" "${target_file}_${timestamp}.backup"
@@ -24,7 +30,7 @@ create_symlink() {
     # Create symlink only if source file is not a .backup file
     if [[ ! "$source_file" =~ \.backup$ ]]; then
         ln -s "$source_file" "$target_file"
-        echo -e "${GREEN}Created symlink: $source_file -> $target_file${NC}"
+        echo -e "Created symlink: $source_file -> $target_file"
     fi
 }
 
@@ -58,7 +64,7 @@ unlink_symlinks() {
             # If the symlink exists, unlink it
             if [ -L "$target_file" ]; then
                 rm "$target_file"
-                echo -e "${RED}Removed symlink: $target_file${NC}"
+                echo -e "Removed symlink: $target_file"
             fi
         fi
     done < <(find "$directory" -type f -name ".*" -not -path "*/.git/*" -not -name ".gitignore" -not -path "*/.DS_Store/*" -print0)
@@ -71,5 +77,5 @@ if [ "$1" == "--unlink" ]; then
     echo -e "${GREEN}Dotfiles unlinked.${NC}"
 else
     find_dotfiles "$dotfiles_dir"
-    echo -e "${GREEN}Dotfiles setup completed.${NC}"
+    echo -e "${GREEN}Symlinks setup successful.${NC}"
 fi
