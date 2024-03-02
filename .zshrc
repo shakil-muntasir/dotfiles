@@ -36,6 +36,7 @@ NVM_COMPLETION=true
 plugins=(
   zsh-nvm
   git
+  docker
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -44,7 +45,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias ls="eza --color=always --group-directories-first"
 alias uuid="uuidgen | tr A-F a-f"
 
 alias hc="history -c && clear"
@@ -55,30 +55,13 @@ alias django="python manage.py "
 alias dcr="docker compose run --rm --service-ports"
 alias dc="docker-compose"
 
-alias chk="brew update && brew upgrade && brew cleanup && npm update --location=global"
+alias chk="npm update --location=global"
 
 alias nvm-update="nvm install 'lts/*' --reinstall-packages-from='lts/*' && nvm install-latest-npm"
 
 alias pi="ssh pi@10.10.10.6"
 alias sprintdevs="ssh -p 6543 sprintdevs@sprintdevs.com"
 alias sshaws="ssh muntasir@3.109.40.231 -p 22079"
-alias sshsetc="ssh -i $HOME/Documents/Important/SSH_Keys/SECT/id_rsa richard@tax.veach.dev"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Path exports
-
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-# Herd injected PHP binary.
-export PATH="/Users/muntasir/Library/Application Support/Herd/bin/":$PATH
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/muntasir/Library/Application Support/Herd/config/php/82/"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/muntasir/Library/Application Support/Herd/config/php/81/"
