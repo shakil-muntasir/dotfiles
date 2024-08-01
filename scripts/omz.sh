@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
-# Function to install Oh My Zsh
+# Function to check and install Oh My Zsh
 install_oh_my_zsh() {
     if [ -d "$HOME/.oh-my-zsh" ]; then
         echo -e "${YELLOW}Oh My Zsh is already installed.${NC}"

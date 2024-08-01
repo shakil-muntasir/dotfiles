@@ -53,16 +53,7 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias sa="sail artisan"
 alias django="python manage.py "
 alias dcr="docker compose run --rm --service-ports"
-alias dc="docker-compose"
-
-alias chk="brew update && brew upgrade && brew cleanup && npm update --location=global"
-
-alias nvm-update="nvm install 'lts/*' --reinstall-packages-from='lts/*' && nvm install-latest-npm"
-
-alias pi="ssh pi@10.10.10.6"
-alias sprintdevs="ssh -p 6543 sprintdevs@sprintdevs.com"
-alias sshaws="ssh muntasir@3.109.40.231 -p 22079"
-alias sshsetc="ssh -i $HOME/Documents/Important/SSH_Keys/SECT/id_rsa richard@tax.veach.dev"
+alias dc="docker compose"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

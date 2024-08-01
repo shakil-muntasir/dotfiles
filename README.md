@@ -1,8 +1,13 @@
 # Dotfiles Repository Setup
 
-This repository contains my personal dotfiles, including configuration files for various command-line tools and applications. With these dotfiles, you can quickly set up your environment on a new machine or synchronize your configurations across multiple systems.
+This repository contains my personal dotfiles, including configuration files for various command-line tools and applications. While this setup is tailored to my personal liking, it can be used by anyone to quickly set up their environment on a new machine or synchronize configurations across multiple systems.
 
-## Usage
+## Included/Installed Items
+- Zsh and Oh My Zsh
+- Git configuration with personalized settings
+- Zsh plugins (zsh-autosuggestions, zsh-syntax-highlighting, zsh-nvm)
+- Zsh theme (powerlevel10k)
+- Symlinks for dotfiles
 
 ### Cloning the Repository
 
@@ -27,18 +32,18 @@ This repository contains my personal dotfiles, including configuration files for
   git checkout macos
   ```
 
+#### Windows Branch
+
+- If you're on WSL, switch to the WSL branch:
+  ```bash
+  git checkout wsl
+  ```
+
 #### Linux Branch
 
 - If you're on Linux, switch to the Linux branch:
   ```bash
   git checkout linux
-  ```
-
-#### Windows Branch
-
-- If you're on Windows, switch to the Windows branch:
-  ```bash
-  git checkout windows
   ```
 
 ### Setting Up Dotfiles
