@@ -40,39 +40,39 @@ This repository contains my personal dotfiles, including configuration files for
   ```
 
 #### Linux Branch
-
 - If you're on Linux, switch to the Linux branch:
   ```bash
   git checkout linux
   ```
 
-### Setting Up Dotfiles
-
-3. Run the setup script to install Oh My ZSH and symlink dotfiles to your home directory:
+### Setting Up
+3. Run the init script to install all the necessary tools and symlink dotfiles to your home directory:
    ```bash
    bash init.sh
    ```
-
-   This script will symlink dotfiles from `~/.dotfiles` to your home directory (`~/`). If a file with the same name exists in your home directory, it will be renamed with a timestamp and `.backup` extension.
-
+> [!NOTE]
+> `init.sh` script will symlink dotfiles from `~/.dotfiles` to your home directory (`~/`). If a file with the same name exists in your home directory, it will be renamed with a timestamp and `.backup` extension.
 
 ### Installing Oh My ZSH
+- If you already have `ZSH` and `Git` installed and only want to install Oh My ZSH and it's plugins:
+  ```bash
+  bash scripts/omz.sh
+  ```
 
-If you only want to install Oh My ZSH and it's plugins:
-```bash
-bash scripts/omz.sh
-```
+### Install necessary fonts
+Download & install [JetBrainsMonoNerdFonts](https://github.com/shakil-muntasir/dotfiles/releases/download/v1.0/JetBrainsMonoNerdFonts.zip) for you Windows Terminal/macOS iterm2.
 
-This will remove the symlinks and restore any backed-up files.
+> [!NOTE]  
+> Setup via init.sh/omz.sh will backup the existing dot files & symlink the ones from this project.
 
 ### Unlinking Dotfiles
-
 If you want to unlink the dotfiles and remove the symlinks, you can use the `--unlink` option with the setup script:
 ```bash
 bash scripts/symlinks.sh --unlink
 ```
 
-This will remove the symlinks and restore any backed-up files.
+> [!WARNING]  
+> This will remove the symlinks and restore any backed-up files.
 
 ## Additional Notes
 
