@@ -55,13 +55,5 @@ alias django="python manage.py "
 alias dcr="docker compose run --rm --service-ports"
 alias dc="docker-compose"
 
-alias chk="npm update --location=global"
-
-alias nvm-update="nvm install 'lts/*' --reinstall-packages-from='lts/*' && nvm install-latest-npm"
-
-alias pi="ssh pi@10.10.10.6"
-alias sprintdevs="ssh -p 6543 sprintdevs@sprintdevs.com"
-alias sshaws="ssh muntasir@3.109.40.231 -p 22079"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
