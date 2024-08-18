@@ -39,10 +39,10 @@ This repository contains my personal dotfiles, including configuration files for
   git checkout wsl
   ```
 
-#### Linux Branch
-- If you're on Linux, switch to the Linux branch:
+#### Raspberry Pi Branch
+- If you're on Raspberry Pi, switch to the Raspberry Pi branch:
   ```bash
-  git checkout linux
+  git checkout pi
   ```
 
 ### Setting Up

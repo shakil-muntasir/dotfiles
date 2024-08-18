@@ -21,20 +21,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Disable Right prompt indentation
 ZLE_RPROMPT_INDENT=0
 
-# NVM auto use if .nvmrc file is found
-export NVM_AUTO_USE=true
-# Enables NVM to lazy load
-# Only do lazy loading when NOT inside vscode
-if [ -z "$VSCODE_PID" ]; then
-    NVM_LAZY_LOAD=true ;
-fi
-
-# Enables NVM zsh completion
-NVM_COMPLETION=true
-
 # Oh My ZSH plugins
 plugins=(
-  zsh-nvm
   git
   docker
   zsh-syntax-highlighting
@@ -48,11 +36,6 @@ source $ZSH/oh-my-zsh.sh
 alias uuid="uuidgen | tr A-F a-f"
 
 alias hc="history -c && clear"
-alias pa="php artisan"
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-alias sa="sail artisan"
-alias django="python manage.py "
-alias dcr="docker compose run --rm --service-ports"
 alias dc="docker-compose"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

@@ -40,16 +40,6 @@ install_zsh_syntax_highlighting() {
     fi
 }
 
-# Function to install zsh-nvm
-install_zsh_nvm() {
-    if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-nvm" ]; then
-        echo -e "${YELLOW}zsh-nvm is already installed.${NC}"
-    else
-        echo -e "Installing zsh-nvm..."
-        git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-nvm > /dev/null 2>&1
-    fi
-}
-
 # Function to install powerlevel10k
 install_powerlevel10k() {
     if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
@@ -65,6 +55,5 @@ echo -e "${YELLOW}Starting installation...${NC}"
 install_oh_my_zsh || exit 1
 install_zsh_autosuggestions
 install_zsh_syntax_highlighting
-install_zsh_nvm
 install_powerlevel10k
 echo -e "${GREEN}Oh My Zsh installation successful.${NC}"
